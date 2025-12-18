@@ -1,0 +1,13 @@
+﻿using System.IO;
+using UnityEngine;
+
+namespace Assets._Project.Scripts.UtilScripts
+{
+    [CreateAssetMenu(fileName = "Paths", menuName = "Scriptable Objects/Utils/Paths")]
+    [DefaultExecutionOrder(-1_000_000)]
+    public class Paths : ScriptableSingleton<Paths>
+    {
+        public string _worldSavePath;
+        public string WorldSavePath { get => Path.Combine(Application.persistentDataPath, _worldSavePath); }
+    }
+}
