@@ -23,30 +23,50 @@ namespace Assets._Project.Scripts.UtilScripts
     [DefaultExecutionOrder(-10000)]
     public class MonoBehaviourLifeCycleHooks:MonoBehaviour
     {
-        public static MonoBehaviourLifeCycleHooks Singleton { get; set; }
+        public static MonoBehaviourLifeCycleHooks _singleton;
+        public static MonoBehaviourLifeCycleHooks Singleton {
+            get
+            {
+                if (_singleton == null)
+                {
+                    var go = new GameObject("MonoBehaviourLifeCycleHooks_Singleton");
+                    _singleton = go.AddComponent<MonoBehaviourLifeCycleHooks>();
+                    DontDestroyOnLoad(_singleton.gameObject);
+
+                    //init
+                    _singleton._hooks = new Dictionary<LifeCycleHookType, Action>();
+                    foreach (LifeCycleHookType hookType in Enum.GetValues(typeof(LifeCycleHookType)))
+                    {
+                        _singleton._hooks[hookType] =_singleton._NoOp;
+                    }
+                }
+
+                return _singleton;
+            }
+        }
 
         public Dictionary<LifeCycleHookType, Action> _hooks;
 
 
         public void Awake()
         {
-            if (Singleton == null)
-            {
-                Singleton = this;
-                DontDestroyOnLoad(gameObject);
+            //if (Singleton == null)
+            //{
+            //    Singleton = this;
+            //    DontDestroyOnLoad(gameObject);
 
-                //init
-                _hooks = new Dictionary<LifeCycleHookType, Action>();
-                foreach (LifeCycleHookType hookType in Enum.GetValues(typeof(LifeCycleHookType)))
-                {
-                    _hooks[hookType] = _NoOp;
-                }
-            }
-            else
-            {
-                Debug.LogError("Another instance of MonoBehaviourLifeCycleHooks exists. Destroying this instance.");
-                Destroy(gameObject);
-            }
+            //    //init
+            //    _hooks = new Dictionary<LifeCycleHookType, Action>();
+            //    foreach (LifeCycleHookType hookType in Enum.GetValues(typeof(LifeCycleHookType)))
+            //    {
+            //        _hooks[hookType] = _NoOp;
+            //    }
+            //}
+            //else
+            //{
+            //    Debug.LogError("Another instance of MonoBehaviourLifeCycleHooks exists. Destroying this instance.");
+            //    Destroy(gameObject);
+            //}
         }
 
         public void _NoOp() { }
