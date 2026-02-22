@@ -9,7 +9,7 @@ namespace Assets._Project.Scripts.UtilScripts
         {
             Debug.LogError("Fatal error: "+message);
             #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+            Debug.Break();
             #endif
         }
     }

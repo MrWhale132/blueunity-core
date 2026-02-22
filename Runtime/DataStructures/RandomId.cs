@@ -48,7 +48,7 @@ namespace Assets._Project.Scripts.UtilScripts
 
         public readonly bool IsDefault => this == Default;
         public readonly bool IsNotDefault => !IsDefault;
-        public static RandomId Default => new RandomId(0);
+        public static RandomId Default { get; } = new RandomId(0);
 
 
         public override readonly bool Equals(object obj)
@@ -84,7 +84,7 @@ namespace Assets._Project.Scripts.UtilScripts
         {
             public override void WriteJson(Newtonsoft.Json.JsonWriter writer, RandomId value, Newtonsoft.Json.JsonSerializer serializer)
             {
-                if(value.IsDefault)
+                if (value.IsDefault)
                 {
                     writer.WriteNull();
                     return;
@@ -98,7 +98,7 @@ namespace Assets._Project.Scripts.UtilScripts
                 {
                     return RandomId.Default;
                 }
-                
+
                 if (long.TryParse(reader.Value.ToString(), out long id))
                 {
                     return new RandomId(id);

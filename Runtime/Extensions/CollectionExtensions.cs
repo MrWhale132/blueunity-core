@@ -1,5 +1,7 @@
 ﻿
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Assets._Project.Scripts.UtilScripts.Extensions
 {
@@ -17,5 +19,12 @@ namespace Assets._Project.Scripts.UtilScripts.Extensions
 
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
         public static bool IsNotNullAndNotEmpty<T>(this ICollection<T> collection) => !collection.IsNullOrEmpty();
+
+        public static bool Has<T>(this IEnumerable<T> collection, Func<T,bool> predicate, out T match)
+        {
+            match = collection.FirstOrDefault(predicate);
+
+            return !Equals(match, default(T));
+        }
     }
 }

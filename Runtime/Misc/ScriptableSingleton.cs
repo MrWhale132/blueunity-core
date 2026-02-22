@@ -20,5 +20,17 @@ namespace Assets._Project.Scripts
                 return _singleton;
             }
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            string[] guids = UnityEditor.AssetDatabase.FindAssets($"t:{GetType().Name}");
+            if (guids.Length > 1)
+            {
+                Debug.LogError($"Multiple {GetType().Name} assets found!");
+            }
+        }
+#endif
+
     }
 }

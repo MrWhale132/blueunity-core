@@ -1,8 +1,12 @@
 {
-    "name": "BlueUtils.Core",
-    "rootNamespace": "Theblueway.Core.Runtime",
-    "references": [],
-    "includePlatforms": [],
+    "name": "NewAssembly",
+    "rootNamespace": "Thebluway.Core.Editor",
+    "references": [
+        "GUID:11f9f0384cd82b14ea5d004a22a3f210"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
