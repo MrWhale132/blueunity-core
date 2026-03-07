@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -63,6 +64,13 @@ public static class AssemblyUtils
 
 public static class AppDomainExtensions
 {
+    public static IEnumerable<Type> GetUserTypes(this AppDomain appDomain)
+    {
+        return appDomain
+            .GetUserAssemblies()
+            .SelectMany(asm => asm.GetTypes());
+    }
+
     public static Assembly[] GetUserAssemblies(this AppDomain appDomain)
     {
         return appDomain

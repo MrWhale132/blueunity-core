@@ -3,12 +3,17 @@ using UnityEditor;
 using System;
 using System.Collections.Generic;
 
-namespace Thebluway.Core.Editor.Extensions
+namespace Theblueway.Core.Editor.Extensions
 {
     public static class SerializedPropertyExtensions
     {
         public static Dictionary<Type, Dictionary<string, MemberInfo>> _memberInfoCache = new();
 
+
+        public static bool EqualContents(this SerializedProperty property1, SerializedProperty property2)
+        {
+            return SerializedProperty.EqualContents(property1, property2);
+        }
 
         public static bool IsDefined<T>(this SerializedProperty property, bool inherit = false) where T : Attribute
         {

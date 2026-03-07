@@ -1,6 +1,6 @@
 ﻿
 using Assets._Project.Scripts.UtilScripts;
-using Thebluway.Core;
+using Theblueway.Core;
 using UnityEngine;
 
 namespace Packages.com.blueutils.core.Runtime.Misc

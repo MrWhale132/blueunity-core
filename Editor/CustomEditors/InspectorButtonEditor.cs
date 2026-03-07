@@ -1,7 +1,8 @@
 using Theblueway.Core.Runtime;
 
-namespace Thebluway.Core.Editor
+namespace Theblueway.Core.Editor
 {
+    using System.Linq;
     using System.Reflection;
     using UnityEditor;
     using UnityEngine;
@@ -23,13 +24,14 @@ namespace Thebluway.Core.Editor
 
             if (!GUI.Button(position, label))
                 return;
-
+            
             var targets = Selection.objects;
-
+            
             foreach (var obj in targets)
             {
                 if (obj == null) continue;
 
+                //this does not work because Selection.objects are not the instances of components that are edited but the gameobject they are on
                 var method = obj.GetType().GetMethod(
                     attr.MethodName,
                     BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
@@ -37,6 +39,7 @@ namespace Thebluway.Core.Editor
                 if (method == null || method.GetParameters().Length != 0)
                     continue;
 
+                Debug.Log("not null method");
                 Undo.RecordObject(obj, label);
                 method.Invoke(obj, null);
                 EditorUtility.SetDirty(obj);
