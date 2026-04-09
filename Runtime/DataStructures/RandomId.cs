@@ -8,9 +8,12 @@ namespace Assets._Project.Scripts.UtilScripts
     public struct RandomId
     {
         [UnityEngine.SerializeField]
-        private long _id;
+        internal long _id;
 
-        private RandomId(long id)
+        public static string underlyingFieldName = nameof(_id);
+
+
+        internal RandomId(long id)
         {
             _id = id;
         }
@@ -77,6 +80,11 @@ namespace Assets._Project.Scripts.UtilScripts
         }
 
 
+        public static explicit operator long(RandomId id)
+        {
+            return id._id;
+        }
+
 
 
 
@@ -108,3 +116,4 @@ namespace Assets._Project.Scripts.UtilScripts
         }
     }
 }
+

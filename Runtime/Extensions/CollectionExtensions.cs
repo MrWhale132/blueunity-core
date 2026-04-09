@@ -17,8 +17,8 @@ namespace Assets._Project.Scripts.UtilScripts.Extensions
 
         public static string StringJoin(this IEnumerable<string> strings, string separator) => string.Join(separator, strings);
 
-        public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
-        public static bool IsNotNullAndNotEmpty<T>(this ICollection<T> collection) => !collection.IsNullOrEmpty();
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> collection) => collection == null || !collection.Any();
+        public static bool IsNotNullAndNotEmpty<T>(this IEnumerable<T> collection) => !collection.IsNullOrEmpty();
 
         public static bool Has<T>(this IEnumerable<T> collection, Func<T,bool> predicate, out T match)
         {

@@ -2,13 +2,40 @@
 using UnityEngine;
 using UnityDebug = UnityEngine.Debug;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Debugging.Logging
+namespace Theblueway.Core.Runtime.Debugging.Logging
 {
     public class BlueDebug
     {
-        public static BlueDebug _singleton = new();
+        public static BlueDebug _singleton;
+        public static BlueDebug singleton {
+            get {
+                EnsureInstance();
+                return _singleton;
+            }
+        }
 
-        public LoggingConfig _config = new() { LogLevel = LogLevel.Debug };
+        public static void EnsureInstance()
+        {
+            if (_singleton == null)
+            {
+                _singleton = new BlueDebug();
+                if (LoggingConfigSO.Singleton != null)
+                    _singleton._config = LoggingConfigSO.Singleton.Config;
+                else
+                    _singleton._config = CreateDefaultConfig();
+            }
+        }
+
+        public static BlueLoggingConfig CreateDefaultConfig()
+        {
+            return new BlueLoggingConfig
+            {
+                LogLevel = LogLevel.Info,
+            };
+        }
+
+
+        public BlueLoggingConfig _config;
 
         public LogLevel logLevel => _config.LogLevel;
 
@@ -21,7 +48,7 @@ namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Debugging.
         [HideInCallstack]
         public static void Error(string message, Object context = null)
         {
-            _singleton.Log(LogLevel.Error, message, context);
+            singleton.Log(LogLevel.Error, message, context);
         }
 
         [HideInCallstack]
@@ -29,7 +56,7 @@ namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Debugging.
         [HideInCallstack]
         public static void Warn(string message, Object context = null)
         {
-            _singleton.Log(LogLevel.Warning, message, context);
+            singleton.Log(LogLevel.Warning, message, context);
         }
 
         [HideInCallstack]
@@ -37,7 +64,7 @@ namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Debugging.
         [HideInCallstack]
         public static void Info(string message, Object context = null)
         {
-            _singleton.Log(LogLevel.Info, message, context);
+            singleton.Log(LogLevel.Info, message, context);
         }
 
         [HideInCallstack]
@@ -45,13 +72,13 @@ namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Debugging.
         [HideInCallstack]
         public static void Debug(string message, Object context = null)
         {
-            _singleton.Log(LogLevel.Debug, message, context);
+            singleton.Log(LogLevel.Debug, message, context);
         }
 
         [HideInCallstack]
         public static void Trace(string message, Object context = null)
         {
-            _singleton.Log(LogLevel.Trace, message, context);
+            singleton.Log(LogLevel.Trace, message, context);
         }
 
 
@@ -92,12 +119,6 @@ namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Debugging.
 
 
 
-
-    public class LoggingConfig
-    {
-        public LogLevel LogLevel;
-        public string Format;
-    }
 
     public enum LogLevel
     {

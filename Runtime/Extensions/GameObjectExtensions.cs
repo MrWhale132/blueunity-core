@@ -8,8 +8,13 @@ namespace Assets._Project.Scripts.UtilScripts.Extensions
     {
         public static bool IsProbablyPrefabAsset(this GameObject gameObject)
         {
-            return gameObject.scene.buildIndex == -1;
+            return gameObject.scene.buildIndex == -1 && gameObject.scene.name != "DontDestroyOnLoad";
             //return gameObject != null && !(gameObject.scene.IsValid()/* && gameObject.scene.isLoaded*/);//cant use that in awake, scene is still unloaded
+        }
+
+        public static string HierarchyPath(this Component component)
+        {
+            return component.gameObject.HierarchyPath();
         }
 
         public static string HierarchyPath(this GameObject gameObject)

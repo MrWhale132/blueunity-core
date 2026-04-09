@@ -28,5 +28,23 @@ namespace Theblueway.Core.Runtime.Extensions
 
             return assemblyTypeName;
         }
+
+
+        public static string QualifiedName(this Type type)
+        {
+            if (type == null) return null;
+
+            var name = type.Name;
+
+            var declaringType = type.DeclaringType;
+
+            while (declaringType != null)
+            {
+                name = declaringType.Name + "+" + name;
+                declaringType = declaringType.DeclaringType;
+            }
+
+            return name;
+        }
     }
 }

@@ -4,7 +4,8 @@ namespace Assets._Project.Scripts
 {
     public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableObject
     {
-        private static T _singleton;
+        public static T _singleton;
+
 
         public static T Singleton {
             get
@@ -27,7 +28,7 @@ namespace Assets._Project.Scripts
             string[] guids = UnityEditor.AssetDatabase.FindAssets($"t:{GetType().Name}");
             if (guids.Length > 1)
             {
-                Debug.LogError($"Multiple {GetType().Name} assets found!");
+                Debug.LogError($"Multiple {GetType().Name} assets found! Only one instance should exist from this asset type.");
             }
         }
 #endif

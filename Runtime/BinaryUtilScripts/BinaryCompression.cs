@@ -7,28 +7,6 @@ namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.BinaryUtil
 {
     public static class BinaryCompression
     {
-        //public static PooledBytes CompressGzipPooled(PooledBytes input)
-        //{
-        //    using var ms = new MemoryStream();
-
-        //    using (var gzip = new GZipStream(ms, CompressionLevel.Fastest, leaveOpen: true))
-        //        gzip.Write(input.Buffer, 0, input.Length);
-
-        //    var compressed = ms.ToArray();
-        //    if (input.Buffer.Length == 0)
-        //    {
-        //        UnityEngine.Debug.Log(compressed.Length);
-        //    }
-
-        //    byte[] rented = ArrayPool<byte>.Shared.Rent(compressed.Length);
-        //    compressed.CopyTo(rented, 0);
-
-        //    return new PooledBytes
-        //    {
-        //        Buffer = rented,
-        //        Length = rented.Length
-        //    };
-        //}
         public static PooledBytes CompressGzipPooled(PooledBytes input)
         {
             // Worst-case gzip can slightly expand, so give headroom
