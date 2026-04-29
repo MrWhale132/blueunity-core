@@ -15,7 +15,7 @@ namespace Assets._Project.Scripts
                     _singleton = Resources.Load<T>(typeof(T).Name);
 
                     if (_singleton == null)
-                        Debug.LogError($"[RuntimeScriptableSingleton] Couldn't find {typeof(T).Name} in Resources.");
+                        Debug.LogError($"[ScriptableSingleton] Couldn't find {typeof(T).Name} in Resources.");
                 }
 
                 return _singleton;
