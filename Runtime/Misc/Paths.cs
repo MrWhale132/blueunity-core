@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets._Project.Scripts.UtilScripts
 {
-    [CreateAssetMenu(fileName = "Paths", menuName = "Scriptable Objects/Infra/Paths")]
+    [CreateAssetMenu(fileName = "Paths", menuName = "Scriptable Objects/Theblueway/Infra/Paths")]
     [DefaultExecutionOrder(-1_000_000)]
     public class Paths : ScriptableObject
     {

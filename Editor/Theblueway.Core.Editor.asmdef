@@ -1,5 +1,5 @@
 {
-    "name": "Theblueway.Editor",
+    "name": "Theblueway.Core.Editor",
     "rootNamespace": "Theblueway.Core.Editor",
     "references": [
         "GUID:11f9f0384cd82b14ea5d004a22a3f210"

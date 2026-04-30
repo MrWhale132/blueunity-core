@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Theblueway.Core.Runtime.Debugging.Logging
 {
-    [CreateAssetMenu(fileName = "LoggingConfigSO", menuName = "Theblueway/Logging/LoggingConfigSO")]
+    [CreateAssetMenu(fileName = "LoggingConfigSO", menuName = "Scriptable Objects/Theblueway/Logging/LoggingConfigSO")]
     public class LoggingConfigSO:ScriptableSingleton<LoggingConfigSO>
     {
         public static new LoggingConfigSO Singleton {

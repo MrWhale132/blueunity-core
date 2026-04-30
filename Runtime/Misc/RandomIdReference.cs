@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Packages.com.blueutils.core.Runtime.Misc
 {
-    [CreateAssetMenu(fileName = "RandomIdReference", menuName = "Scriptable Objects/Infra/RandomIdReference")]
+    [CreateAssetMenu(fileName = "RandomIdReference", menuName = "Scriptable Objects/Theblueway/Infra/RandomIdReference")]
     public class RandomIdReference:ScriptableObject
     {
-        [AllowEdit(RandomIdEditMode =RandomIdEditMode.Paste)]
+        [AllowEdit(RandomIdEditMode =RandomIdEditMode.Paste | RandomIdEditMode.Generate)]
         public RandomId Id;
 
         public static implicit operator RandomId(RandomIdReference reference)
