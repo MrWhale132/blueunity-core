@@ -4,7 +4,7 @@ using System.Reflection;
 using System;
 using UnityEngine.Events;
 
-namespace Theblueway.Core.Runtime
+namespace Theblueway.Core.ReflectionTools
 {
     public static class ReflectionTools
     {

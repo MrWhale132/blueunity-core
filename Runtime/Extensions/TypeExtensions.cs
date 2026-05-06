@@ -2,7 +2,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Theblueway.Core.Runtime.Extensions
+namespace Theblueway.Core.Extensions
 {
     public static class TypeExtensions
     {

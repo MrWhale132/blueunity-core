@@ -1,9 +1,9 @@
 ﻿
-using Assets._Project.Scripts.UtilScripts;
-using Theblueway.Core;
+using Theblueway.Core.Attributes;
+using Theblueway.Core.DataStructures;
 using UnityEngine;
 
-namespace Packages.com.blueutils.core.Runtime.Misc
+namespace Theblueway.Core.Common
 {
     [CreateAssetMenu(fileName = "RandomIdReference", menuName = "Scriptable Objects/Theblueway/Infra/RandomIdReference")]
     public class RandomIdReference:ScriptableObject

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Assets._Project.Scripts.UtilScripts.Extensions
+namespace Theblueway.Core.Extensions
 {
     public static class CollectionExtensions
     {

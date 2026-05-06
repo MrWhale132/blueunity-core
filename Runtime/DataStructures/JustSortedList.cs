@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Assets._Project.Scripts.UtilScripts.DataStructures
+namespace Theblueway.Core.DataStructures
 {
     public class JustSortedList<T> : IEnumerable<T>
     {

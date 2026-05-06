@@ -2,7 +2,7 @@
 using System.Threading;
 using Random = System.Random;
 
-namespace Assets._Project.Scripts.UtilScripts
+namespace Theblueway.Core.DataStructures
 {
     [Serializable]
     public struct RandomId

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Theblueway.Core.Runtime
+namespace Theblueway.Core.Attributes
 {
 
     [AttributeUsage(AttributeTargets.Field)]

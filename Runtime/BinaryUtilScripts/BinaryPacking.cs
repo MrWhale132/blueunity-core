@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.BinaryUtilScripts
+namespace Theblueway.Core.BinaryUtilities
 {
     //todo: add a IsBlittable(Type) safeguard
     public static class BinaryPacking

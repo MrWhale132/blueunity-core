@@ -2,7 +2,7 @@
 using System.Text;
 using UnityEngine;
 
-namespace Assets._Project.Scripts.UtilScripts.Extensions
+namespace Theblueway.Core.Extensions
 {
     public static class GameObjectExtensions
     {

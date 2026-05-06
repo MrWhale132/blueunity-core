@@ -2,11 +2,11 @@
 using System;
 using System.Buffers;
 using System.Collections.Generic;
-using Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.BinaryUtilScripts;
-using Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.DataStructures;
-using UnityEngine;
+using Theblueway.Core.Base64Utilities;
+using Theblueway.Core.BinaryUtilities;
+using Theblueway.Core.DataStructures;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Misc
+namespace Theblueway.Core.Compression.Json
 {
     public static class JsonCompression
     {

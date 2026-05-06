@@ -1,10 +1,9 @@
-﻿
-using Assets._Project.Scripts;
-using System;
-using Theblueway.Core.Runtime.InspectorAttributes;
+﻿using System;
+using Theblueway.Core.Attributes;
+using Theblueway.Core.Common;
 using UnityEngine;
 
-namespace Theblueway.Core.Runtime.Debugging.Logging
+namespace Theblueway.Core.Logging
 {
     [CreateAssetMenu(fileName = "LoggingConfigSO", menuName = "Scriptable Objects/Theblueway/Logging/LoggingConfigSO")]
     public class LoggingConfigSO:ScriptableSingleton<LoggingConfigSO>

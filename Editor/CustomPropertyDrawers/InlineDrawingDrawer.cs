@@ -1,5 +1,4 @@
-﻿
-using Theblueway.Core.Runtime.InspectorAttributes;
+﻿using Theblueway.Core.Attributes;
 using UnityEditor;
 using UnityEngine;
 

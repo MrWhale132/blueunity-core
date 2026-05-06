@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Scripting;
 
-namespace Assets._Project.Scripts.UtilScripts
+namespace Theblueway.Core.Common
 {
     public enum LifeCycleHookType
     {

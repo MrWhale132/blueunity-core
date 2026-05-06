@@ -2,7 +2,7 @@
 using System;
 using System.Buffers;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.BinaryUtilScripts
+namespace Theblueway.Core.BinaryUtilities
 {
     public struct PooledBytes : IDisposable
     {

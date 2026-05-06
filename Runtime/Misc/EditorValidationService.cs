@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.Misc
+namespace Theblueway.Core.ProjectValidation
 {
     public interface IEditorValidatable
     {

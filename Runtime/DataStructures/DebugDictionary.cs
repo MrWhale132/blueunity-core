@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Theblueway.Core.Common;
 using UnityEngine;
 
-namespace Assets._Project.Scripts.UtilScripts.DataStructures
+namespace Theblueway.Core.DataStructures
 {
     [Serializable]
     public struct SerilaizeableKeyValuePair<TKey, TValue>

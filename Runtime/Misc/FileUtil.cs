@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 
 
-namespace Theblueway.Core.Runtime
+namespace Theblueway.Core.Common
 {
     public class FileUtil
     {

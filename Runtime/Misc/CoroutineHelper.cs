@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-namespace Theblueway.Core.Runtime.Misc
+namespace Theblueway.Core.Common
 {
     public static class CoroutineHelper
     {

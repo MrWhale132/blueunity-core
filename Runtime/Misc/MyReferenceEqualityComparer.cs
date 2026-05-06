@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace Assets._Project.Scripts.UtilScripts.Misc
+namespace Theblueway.Core.Common
 {
     //this sealed has nothing special to it, just a nice-to-have
     public sealed class MyReferenceEqualityComparer : IEqualityComparer<object>

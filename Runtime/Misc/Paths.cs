@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using UnityEngine;
 
-namespace Assets._Project.Scripts.UtilScripts
+namespace Theblueway.Core.Common
 {
     [CreateAssetMenu(fileName = "Paths", menuName = "Scriptable Objects/Theblueway/Infra/Paths")]
     [DefaultExecutionOrder(-1_000_000)]

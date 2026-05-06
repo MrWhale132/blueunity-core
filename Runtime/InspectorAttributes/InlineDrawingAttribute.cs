@@ -1,5 +1,5 @@
 ﻿
-namespace Theblueway.Core.Runtime.InspectorAttributes
+namespace Theblueway.Core.Attributes
 {
     public class InlineDrawingAttribute : UnityEngine.PropertyAttribute
     {

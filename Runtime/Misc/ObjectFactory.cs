@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Reflection;
-using Theblueway.Core.Runtime.Extensions;
+using Theblueway.Core.Extensions;
 using UnityEngine;
 
-namespace Theblueway.Core.Runtime
+namespace Theblueway.Core.Common
 {
     public class ObjectFactory
     {

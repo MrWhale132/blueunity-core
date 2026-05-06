@@ -1,8 +1,7 @@
-﻿using Assets._Project.Scripts.UtilScripts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets._Project.Scripts.UtilScripts.DataStructures
+namespace Theblueway.Core.DataStructures
 {
     public interface IBindable
     {

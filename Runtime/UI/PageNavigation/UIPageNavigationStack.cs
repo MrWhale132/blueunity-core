@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace Theblueway.Core.Runtime.UI.PageNavigation
+namespace Theblueway.Core.UI.PageNavigation
 {
     public class UIPageNavigationStack<TNavigationParams>
     {

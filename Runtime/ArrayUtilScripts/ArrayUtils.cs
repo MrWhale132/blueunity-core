@@ -2,9 +2,9 @@
 using System;
 using System.Buffers;
 using System.Collections.Generic;
-using Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.DataStructures;
+using Theblueway.Core.DataStructures;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.ArrayUtilScripts
+namespace Theblueway.Core.PooledArrayUtilities
 {
     public static class ArrayUtils
     {

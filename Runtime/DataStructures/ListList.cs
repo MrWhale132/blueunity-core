@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Theblueway.Core.Runtime.DataStructures
+namespace Theblueway.Core.DataStructures
 {
     /// <summary>
     /// This data structure is a List of Lists for prefab or sceneplaced variants/overrides, 
@@ -12,7 +12,7 @@ namespace Theblueway.Core.Runtime.DataStructures
     /// </summary>
     /// <typeparam name="T"></typeparam>
     [Serializable]
-    public class InheritableList<T>
+    public class ListList<T>
     {
         public List<ListHolder<T>> _listChain;
         public List<ListHolder<T>> listChain {

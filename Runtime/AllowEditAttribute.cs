@@ -1,6 +1,6 @@
 using System;
 
-namespace Theblueway.Core
+namespace Theblueway.Core.Attributes
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
     public class AllowEditAttribute : System.Attribute

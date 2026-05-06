@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets._Project.Scripts
+namespace Theblueway.Core.Common
 {
     public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableObject
     {

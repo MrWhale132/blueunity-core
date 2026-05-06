@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Theblueway.Core.Runtime
+namespace Theblueway.Core.Extensions
 {
     public static class JsonExtensions
     {

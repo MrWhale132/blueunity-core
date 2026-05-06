@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityDebug = UnityEngine.Debug;
 
-namespace Theblueway.Core.Runtime.Debugging.Logging
+namespace Theblueway.Core.Logging
 {
     public class BlueDebug
     {

@@ -3,7 +3,7 @@ using System.Buffers;
 using System.IO;
 using System.IO.Compression;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.BinaryUtilScripts
+namespace Theblueway.Core.BinaryUtilities
 {
     public static class BinaryCompression
     {

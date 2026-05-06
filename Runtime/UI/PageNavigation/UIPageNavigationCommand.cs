@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Theblueway.Core.Runtime.UI.PageNavigation
+namespace Theblueway.Core.UI.PageNavigation
 {
     public class UIPageNavigationCommand<TNavigationParams>
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Buffers;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.DataStructures
+namespace Theblueway.Core.DataStructures
 {
     public struct PooledArray<T>:IDisposable
     {

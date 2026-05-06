@@ -3,7 +3,7 @@
     using UnityEditor.SceneManagement;
     using System.Linq;
     using Theblueway.Core.Editor.SerializedInstanceMigrationTools;
-using Assets._Project.Scripts.UtilScripts.Extensions;
+using Theblueway.Core.Extensions;
 
 
 namespace Theblueway.Core.Editor.Packages.com.blueutils.core.Editor.SerializedInstanceMigrationTools

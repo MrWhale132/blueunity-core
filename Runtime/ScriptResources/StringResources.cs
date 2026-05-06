@@ -1,5 +1,5 @@
 ﻿
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.ScriptResources
+namespace Theblueway.Core.ScriptResources
 {
     public static class StringResources
     {

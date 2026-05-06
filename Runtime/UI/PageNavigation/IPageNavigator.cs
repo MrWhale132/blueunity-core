@@ -1,5 +1,5 @@
 ﻿
-namespace Theblueway.Core.Runtime.UI.PageNavigation
+namespace Theblueway.Core.UI.PageNavigation
 {
     public interface IPageNavigator<TNavigationParams>
     {

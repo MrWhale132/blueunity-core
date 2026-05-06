@@ -1,7 +1,8 @@
 ﻿    using System;
     using System.Buffers;
+using Theblueway.Core.BinaryUtilities;
 
-namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.BinaryUtilScripts
+namespace Theblueway.Core.Base64Utilities
 {
     public static class Base64Util
     {
@@ -34,7 +35,6 @@ namespace Theblueway.Core.Runtime.Packages.com.blueutils.core.Runtime.BinaryUtil
             }
         }
 
-        // .NET doesn't expose this publicly, so we compute it
         private static int ToBase64CharArrayLength(int byteLength)
         {
             return ((byteLength + 2) / 3) * 4;
