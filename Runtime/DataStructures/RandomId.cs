@@ -1,11 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using Random = System.Random;
 
 namespace Theblueway.Core.DataStructures
 {
     [Serializable]
-    public struct RandomId
+    public struct RandomId : IEquatable<RandomId>
     {
         [UnityEngine.SerializeField]
         internal long _id;
@@ -47,11 +48,53 @@ namespace Theblueway.Core.DataStructures
         }
 
 
+        public static RandomId From(string value)
+        {
+            if (!long.TryParse(value, out long parsedVal))
+            {
+                throw new ArgumentException($"[RandomId] Supplied string value contains invalid characters. " +
+                    $"Invalid value: {value}");
+            }
+
+            if (parsedVal < 100000000000000000)
+            {
+                throw new ArgumentException($"[RandomId] Supplied string value is in invalid format." +
+                    $"Invalid value: {value}");
+            }
+
+            return new RandomId(parsedVal);
+        }
+
+        public static RandomId From(BinaryReader reader)
+        {
+            long val;
+            try
+            {
+                val = reader.ReadInt64();
+            }
+            catch (Exception e)
+            {
+                var blExc = new ArgumentException($"[RandomId] Error during creating RandomId from BinaryReader.", innerException: e);
+                throw blExc;
+            }
+
+
+            if (val < 100000000000000000)
+            {
+                throw new ArgumentException($"[RandomId] Supplied string value is in invalid format." +
+                    $"Invalid value: {val}");
+            }
+
+            return new RandomId(val);
+        }
+
+
         public static RandomId New => Get();
 
         public readonly bool IsDefault => this == Default;
         public readonly bool IsNotDefault => !IsDefault;
         public static RandomId Default { get; } = new RandomId(0);
+        public readonly string AsString => _id.ToString();
 
 
         public override readonly bool Equals(object obj)
@@ -67,6 +110,11 @@ namespace Theblueway.Core.DataStructures
         public override readonly string ToString()
         {
             return _id.ToString();
+        }
+
+        public readonly bool Equals(RandomId other)
+        {
+            return other._id == _id;
         }
 
         public static bool operator ==(RandomId left, RandomId right)
