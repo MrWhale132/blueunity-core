@@ -89,6 +89,12 @@ namespace Theblueway.Core.DataStructures
         }
 
 
+        public readonly void WriteTo(BinaryWriter writer)
+        {
+            writer.Write(_id);
+        }
+
+
         public static RandomId New => Get();
 
         public readonly bool IsDefault => this == Default;
@@ -161,6 +167,15 @@ namespace Theblueway.Core.DataStructures
                 }
                 throw new Newtonsoft.Json.JsonSerializationException($"Cannot convert {reader.Value} to RandomId");
             }
+        }
+    }
+
+
+    public static class RandomIdUtils
+    {
+        public static void Write(this BinaryWriter writer, RandomId id)
+        {
+            writer.Write(id._id);
         }
     }
 }
