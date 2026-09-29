@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
+using Theblueway.Core.Extensions;
 using Random = System.Random;
 
 namespace Theblueway.Core.DataStructures
@@ -50,6 +51,10 @@ namespace Theblueway.Core.DataStructures
 
         public static RandomId From(string value)
         {
+            if (value.IsNullOrEmpty()) return Default;
+
+            //todo: System.Buffers.Text.Utf8Parser.TryParse
+            //ReadOnlySpan<byte> utf8Bytes = "12345"u8; // C# 11 UTF-8 literal
             if (!long.TryParse(value, out long parsedVal))
             {
                 throw new ArgumentException($"[RandomId] Supplied string value contains invalid characters. " +
@@ -115,7 +120,7 @@ namespace Theblueway.Core.DataStructures
 
         public override readonly string ToString()
         {
-            return _id.ToString();
+            return IsDefault ? string.Empty : _id.ToString();
         }
 
         public readonly bool Equals(RandomId other)
